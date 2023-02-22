@@ -31,7 +31,22 @@ public class Recursion {
         }
         return fibonacci(n-2)+ fibonacci(n-1);
     }
+
+    //optimised method
+    public static int power(int a, int n){
+        if (n == 0){
+            return 1;
+        }
+        int halfpow = power(a, n/2);
+        int pow = halfpow * halfpow;
+
+        //n is odd
+        if(n%2!=0){
+            pow = pow * a;
+        }
+        return pow;
+    }
     public static void main(String[] args) {
-        System.out.println( fibonacci(5));
+        System.out.println( power(5,2));
     }
 }
